@@ -2,3 +2,8 @@ body {
   text-align: center;
   background-color:lavender;
 }
+
+.App {
+  display: flex;
+  flex-direction: row;
+}

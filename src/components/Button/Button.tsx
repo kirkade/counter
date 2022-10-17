@@ -1,8 +1,8 @@
 type ButtonsType = {
     name: string,
     callback: () => void,
-    class: string,
-    disabled: boolean,
+    class?: string,
+    disabled?: boolean,
 }
 
 export const Button = (props: ButtonsType) => {

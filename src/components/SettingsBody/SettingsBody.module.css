@@ -1,0 +1,21 @@
+
+.settings {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.button {
+    font-size: 20px;
+    margin: 10px;
+    height: 4vw;
+    width: 20vh;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 10px;
+    transition-duration: 0.4s;
+    border: 2px coral solid;
+}
+
+.button:hover {
+    background-color: limegreen;
+    color: white;
+}
