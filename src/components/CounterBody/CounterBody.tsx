@@ -4,9 +4,11 @@ import styles from "./CounterBody.module.css";
 
 
 type CounterBodyType = {
-    counter: number,
-    maxvalue: number,
-    setCounter: (value: number) => void,
+    counter: number
+    maxvalue: number
+    setCounter: (value: number) => void
+    error:string
+    startvalue:number
 }
 
 export const CounterBody = (props: CounterBodyType) => {
@@ -20,12 +22,12 @@ export const CounterBody = (props: CounterBodyType) => {
     const increment = () => {
         if (props.counter < props.maxvalue) {
             props.setCounter(props.counter + 1)
-            localStorage.setItem('counterValue', JSON.stringify(props.counter + 1))
+            localStorage.setItem('startValue', JSON.stringify(props.startvalue))
         }
     }
 
     const reset = () => {
-        props.setCounter(0)
+        props.setCounter(props.startvalue)
         localStorage.clear()
     }
 
@@ -33,7 +35,7 @@ export const CounterBody = (props: CounterBodyType) => {
     return (
         <div className={styles.counter}>
 
-            <Number counter={props.counter} maxvalue={props.maxvalue}/>
+            <Number counter={props.counter} maxvalue={props.maxvalue} error={props.error}/>
 
             <div className={styles.buttonsRow}>
                 <Button
@@ -50,6 +52,7 @@ export const CounterBody = (props: CounterBodyType) => {
                     disabled={conditionReset}
                 />
             </div>
+
 
         </div>
     )

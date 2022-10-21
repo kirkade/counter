@@ -4,14 +4,20 @@ import styles from './Number.module.css'
 type NumberType = {
     counter: number;
     maxvalue: number,
+    error: string
 }
 
 export const Number = (props: NumberType) => {
 
     return (
-        <div className={props.counter > props.maxvalue - 1 ? styles.numStop : styles.num}>
-            {props.counter >= props.maxvalue ? <p style={{fontSize: "25px"}} >{'The counter reach maxvalue'}</p> : <p>{props.counter}</p>}
-            {/*<p>{props.num}</p>*/}
+
+        <div className={props.counter > props.maxvalue  ? styles.numStop : styles.num}>
+            {
+                props.error
+                    ? props.error
+                    : <div className={styles.counter}>{props.counter}</div>
+            }
+
         </div>
     )
 }

@@ -6,8 +6,10 @@ import {SettingsBody} from "./components/SettingsBody/SettingsBody";
 
 function App() {
 
-    let [counter, setCounter] = useState<number>(0)
     let [maxvalue, setMaxvalue] = useState<number>(5)
+    let [startvalue,setStartValue] = useState<number>(0)
+    let [counter, setCounter] = useState<number>(startvalue)
+    let [error,setError] = useState<string>('')
 
     useEffect(() => {
         let counterAsString = localStorage.getItem('counterValue')
@@ -25,10 +27,26 @@ function App() {
         }
     }, [])
 
+
+
     return (
         <div className={'App'}>
-            <SettingsBody counter={counter} maxvalue={maxvalue} setCounter={setCounter} setMaxvalue={setMaxvalue}/>
-            <CounterBody counter={counter} maxvalue={maxvalue} setCounter={setCounter}/>
+            <SettingsBody
+                counter={counter}
+                maxvalue={maxvalue}
+                setStartValue={setStartValue}
+                setMaxvalue={setMaxvalue}
+                setError={setError}
+                startvalue={startvalue}
+                setCounter={setCounter}
+            />
+            <CounterBody
+                counter={counter}
+                maxvalue={maxvalue}
+                setCounter={setCounter}
+                error={error}
+                startvalue={startvalue}
+            />
         </div>
     );
 }

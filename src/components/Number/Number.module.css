@@ -8,11 +8,13 @@
     height: 200px;
 }
 
-.num p {
+
+.counter {
     margin-top: 60px;
     font-size: 50px;
     color: coral;
 }
+
 
 .numStop {
     margin: 0 auto;
@@ -23,7 +25,8 @@
     height: 200px;
 }
 
-.numStop p {
+.numStop .counter {
+    font-weight: bold;
     margin-top: 60px;
     font-size: 50px;
     color: red;
