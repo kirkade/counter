@@ -9,6 +9,7 @@ type CounterBodyType = {
     setCounter: (value: number) => void
     error:string
     startvalue:number
+    message:string
 }
 
 export const CounterBody = (props: CounterBodyType) => {
@@ -16,14 +17,12 @@ export const CounterBody = (props: CounterBodyType) => {
     const conditionReset = props.counter === 0
     const conditionInc = props.counter > props.maxvalue - 1
 
-    const resetClass = props.counter > props.maxvalue ? styles.buttonStop : styles.button
-    const incClass = props.counter < props.maxvalue ? styles.button : styles.buttonStop
-
     const increment = () => {
         if (props.counter < props.maxvalue) {
             props.setCounter(props.counter + 1)
             localStorage.setItem('startValue', JSON.stringify(props.startvalue))
         }
+
     }
 
     const reset = () => {
@@ -35,20 +34,20 @@ export const CounterBody = (props: CounterBodyType) => {
     return (
         <div className={styles.counter}>
 
-            <Number counter={props.counter} maxvalue={props.maxvalue} error={props.error}/>
+            <Number counter={props.counter} maxvalue={props.maxvalue} error={props.error} message={props.message}/>
 
             <div className={styles.buttonsRow}>
                 <Button
                     name={'inc'}
-                    callback={() => increment()}
-                    class={incClass}
+                    callback={increment}
+                    class={styles.button}
                     disabled={conditionInc}
                 />
 
                 <Button
                     name={'reset'}
-                    callback={() => reset()}
-                    class={resetClass}
+                    callback={reset}
+                    class={styles.button}
                     disabled={conditionReset}
                 />
             </div>

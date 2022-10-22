@@ -10,6 +10,7 @@ function App() {
     let [startvalue,setStartValue] = useState<number>(0)
     let [counter, setCounter] = useState<number>(startvalue)
     let [error,setError] = useState<string>('')
+    let [message,setMessage] = useState<string>('')
 
     useEffect(() => {
         let counterAsString = localStorage.getItem('counterValue')
@@ -34,11 +35,13 @@ function App() {
             <SettingsBody
                 counter={counter}
                 maxvalue={maxvalue}
+                startvalue={startvalue}
+                error={error}
                 setStartValue={setStartValue}
                 setMaxvalue={setMaxvalue}
                 setError={setError}
-                startvalue={startvalue}
                 setCounter={setCounter}
+                setMessage={setMessage}
             />
             <CounterBody
                 counter={counter}
@@ -46,6 +49,7 @@ function App() {
                 setCounter={setCounter}
                 error={error}
                 startvalue={startvalue}
+                message={message}
             />
         </div>
     );

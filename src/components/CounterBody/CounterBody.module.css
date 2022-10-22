@@ -5,35 +5,31 @@
 }
 
 .button {
-    font-size: 20px;
-    margin: 10px;
-    height: 4vw;
-    width: 20vh;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    border-radius: 10px;
-    transition-duration: 0.4s;
-    border: 2px coral solid;
+    width: 130px;
+    height: 50px;
+    margin-top: 10px;
+    margin-left: 10px;
+    background-color: #3A78A4;
+    border-radius: 8px;
+    border-style: none;
+    box-shadow: rgb(39 174 96 / 15%) 0 4px 9px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    outline: none;
+    padding: 13px 20px;
+    text-align: center;
 }
 
 .button:hover {
-    background-color: limegreen;
+    background-color: #3F627B;
     color: white;
 }
 
-.buttonStop {
-    font-size: 20px;
-    margin: 10px;
-    height: 4vw;
-    width: 20vh;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    border-radius: 10px;
-    transition-duration: 0.4s;
-    border: 2px coral solid;
-}
-
-.buttonStop:hover {
-    background-color: crimson;
-    color: white;
+.button:disabled {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
 }
 
 .buttonsRow {
