@@ -9,7 +9,6 @@ type CounterBodyType = {
     setCounter: (value: number) => void
     error:string
     startvalue:number
-    message:string
 }
 
 export const CounterBody = (props: CounterBodyType) => {
@@ -20,9 +19,7 @@ export const CounterBody = (props: CounterBodyType) => {
     const increment = () => {
         if (props.counter < props.maxvalue) {
             props.setCounter(props.counter + 1)
-            localStorage.setItem('startValue', JSON.stringify(props.startvalue))
         }
-
     }
 
     const reset = () => {
@@ -34,7 +31,7 @@ export const CounterBody = (props: CounterBodyType) => {
     return (
         <div className={styles.counter}>
 
-            <Number counter={props.counter} maxvalue={props.maxvalue} error={props.error} message={props.message}/>
+            <Number counter={props.counter} maxvalue={props.maxvalue} error={props.error}/>
 
             <div className={styles.buttonsRow}>
                 <Button

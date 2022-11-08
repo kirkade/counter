@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
-
 import './App.css';
 import {CounterBody} from "./components/CounterBody/CounterBody";
 import {SettingsBody} from "./components/SettingsBody/SettingsBody";
+
 
 function App() {
 
@@ -10,7 +10,7 @@ function App() {
     let [startvalue,setStartValue] = useState<number>(0)
     let [counter, setCounter] = useState<number>(startvalue)
     let [error,setError] = useState<string>('')
-    let [message,setMessage] = useState<string>('')
+
 
     useEffect(() => {
         let counterAsString = localStorage.getItem('counterValue')
@@ -41,7 +41,6 @@ function App() {
                 setMaxvalue={setMaxvalue}
                 setError={setError}
                 setCounter={setCounter}
-                setMessage={setMessage}
             />
             <CounterBody
                 counter={counter}
@@ -49,7 +48,6 @@ function App() {
                 setCounter={setCounter}
                 error={error}
                 startvalue={startvalue}
-                message={message}
             />
         </div>
     );
